@@ -43,12 +43,16 @@ def get_links():
 def get_posts():
     db = Data('../db.sqlite3')
     links = get_links()
-    for link in links:
-        r = requests.get(link)
-        soup = bs(r.text, 'html.parser')
-        content = soup.find('div', class_='post__body_full')
-        title = soup.find('span', class_='post__title-text')
-        db.save_data(str(link), str(title), str(content))
-        print(f"post {link} saved!")
+    try:
+        for link in links:
+            r = requests.get(link)
+            soup = bs(r.text, 'html.parser')
+            content = soup.find('div', class_='post__body_full')
+            title = soup.find('span', class_='post__title-text')
+            db.save_data(str(link), str(title), str(content))
+            print(f"post {link} saved!")
+    except Exception as ex:
+        pass
+
 
 get_posts()
