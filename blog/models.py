@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 
 class Content(models.Model):
@@ -8,3 +9,6 @@ class Content(models.Model):
 
     def __str__(self):
         return self.link
+
+    def get_absolute_url(self):
+        return reverse('detail', args=[self.id])

@@ -1,0 +1,10 @@
+[default]
+name=Default
+runtime=host
+config-opts=
+run-opts=
+prefix=/home/pydev/.cache/gnome-builder/install/djangoProject/host
+app-id=
+postbuild=
+prebuild=
+default=true

@@ -1,0 +1,15 @@
+﻿{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="col-md-12 blog-post">
+                                    <div class="post-title">
+                                      <a href="{{ post.get_absolute_url }}"><h1>{{ post.title|safe }}</h1></a>
+                                    </div>
+<!--                                    <div class="post-info">-->
+<!--                                    	<span>November 23, 2016 / by <a href="#" target="_blank">Alex Parker</a></span>-->
+<!--                                    </div>  -->
+                                    {{ post.post|safe }}
+<!--                                    <a href="{{ post.get_absolute_url }}" class="button button-style button-anim fa fa-long-arrow-right"><span>Read More</span></a>-->
+                                </div>
+{% endblock %}
